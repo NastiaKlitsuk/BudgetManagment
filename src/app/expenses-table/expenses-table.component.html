@@ -1,0 +1,45 @@
+<div class="table-container">
+  <div class="table-wrapper">
+    <mat-table #table [dataSource]="expanses">
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+        <mat-cell *matCellDef="let expense">
+          <mat-form-field>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              [value]="expense.date"
+              [(ngModel)]="expense.date"
+              placeholder="Choose an expense date"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+        <mat-cell *matCellDef="let expense">
+          <mat-form-field floatLabel="never">
+            <input
+              matInput
+              [value]="expense.amount"
+              [(ngModel)]="expense.amount"
+            />
+          </mat-form-field>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+  </div>
+  <div class="button-container">
+    <button mat-button (click)="addNewEmptyRow()">Add new row</button>
+    <button mat-button color="primary">Primary</button>
+  </div>
+</div>
