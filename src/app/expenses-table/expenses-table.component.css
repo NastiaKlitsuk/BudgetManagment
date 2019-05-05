@@ -1,18 +1,16 @@
 .table-container {
   display: flex;
   flex-direction: column;
-  align-items: baseline;
 }
 
 .table-wrapper {
-  width: 30vw;
-  height: 45vh;
+  height: 20vh;
   overflow-y: auto;
 }
 
-.button-container {
+.buttons-container {
   display: flex;
   flex-direction: row;
-  align-items: start;
+  align-items: flex-start;
   margin-top: 10px;
 }

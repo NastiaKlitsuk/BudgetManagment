@@ -1,4 +1,4 @@
-export interface ExpensesTableData {
+export interface Expenses {
   date: string;
   amount: number;
 }

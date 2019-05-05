@@ -12,9 +12,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
+import { ExpensesBySubjectComponent } from './expenses-by-subject/expenses-by-subject.component';
 
 @NgModule({
-  declarations: [AppComponent, ExpensesTableComponent],
+  declarations: [AppComponent, ExpensesTableComponent, ExpensesBySubjectComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

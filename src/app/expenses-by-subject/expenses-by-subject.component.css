@@ -1,0 +1,28 @@
+.expenses-container {
+  display: grid;
+  grid-template-columns: repeat(3, 26vw);
+  grid-gap: 5em;
+}
+
+.expenses-subject-container {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  width: 25vw;
+  margin: 10px;
+}
+
+.subject {
+  color: blueviolet;
+  font-weight: 500;
+  font-size: 1em;
+  margin: 5px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+

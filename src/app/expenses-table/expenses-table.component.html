@@ -1,6 +1,6 @@
 <div class="table-container">
   <div class="table-wrapper">
-    <mat-table #table [dataSource]="expanses">
+    <mat-table #table [dataSource]="expenses">
       <ng-container matColumnDef="date">
         <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
         <mat-cell *matCellDef="let expense">
@@ -38,8 +38,8 @@
       <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
     </mat-table>
   </div>
-  <div class="button-container">
+  <div class="buttons-container">
     <button mat-button (click)="addNewEmptyRow()">Add new row</button>
-    <button mat-button color="primary">Primary</button>
+    <button mat-button color="primary" (click)="submitExpenses()">Submit</button>
   </div>
 </div>

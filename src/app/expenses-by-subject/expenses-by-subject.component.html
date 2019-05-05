@@ -1,0 +1,9 @@
+<div class="expenses-container">
+  <div
+    class="expenses-subject-container"
+    *ngFor="let expensesCategoryName of expensesCategoryNames"
+  >
+    <span class="subject">{{ expensesCategoryName }}</span>
+    <app-expenses-table></app-expenses-table>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ExpensesTableEmptyData } from './expenses-table.consts';
+import { Expenses } from './expenses-table.interfaces';
 
 @Component({
   selector: 'app-expenses-table',
@@ -8,12 +9,17 @@ import { ExpensesTableEmptyData } from './expenses-table.consts';
 })
 export class ExpensesTableComponent {
   public displayedColumns: string[] = ['date', 'amount'];
-  public expanses = [ExpensesTableEmptyData];
+  public expenses: Expenses[];
 
-  constructor() {}
+  constructor() {
+    const emptyRow = Object.assign({}, ExpensesTableEmptyData);
+    this.expenses = [emptyRow];
+  }
 
   addNewEmptyRow() {
     const emptyRow = Object.assign({}, ExpensesTableEmptyData);
-    this.expanses = [...this.expanses, emptyRow];
+    this.expenses = [...this.expenses, emptyRow];
   }
+
+  submitExpenses() {}
 }
