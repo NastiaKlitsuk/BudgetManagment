@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { ExpensesTableEmptyData } from './expenses-table.consts';
-import { Expenses } from './expenses-table.interfaces';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CategoryExpenses } from '../interfaces/expenses.interfaces';
+import { CategoryExpensesName } from '../enums/expenses.enums';
 
 @Component({
   selector: 'app-expenses-table',
@@ -9,17 +9,19 @@ import { Expenses } from './expenses-table.interfaces';
 })
 export class ExpensesTableComponent {
   public displayedColumns: string[] = ['date', 'amount'];
-  public expenses: Expenses[];
+  @Input() categoryExpenses: CategoryExpenses;
+  @Output() addNewRow: EventEmitter<CategoryExpensesName> = new EventEmitter();
+  @Output() submitExpenses: EventEmitter<
+    CategoryExpensesName
+  > = new EventEmitter();
 
-  constructor() {
-    const emptyRow = Object.assign({}, ExpensesTableEmptyData);
-    this.expenses = [emptyRow];
+  constructor() {}
+
+  onAddNewRow() {
+    this.addNewRow.emit(this.categoryExpenses.categoryName);
   }
 
-  addNewEmptyRow() {
-    const emptyRow = Object.assign({}, ExpensesTableEmptyData);
-    this.expenses = [...this.expenses, emptyRow];
+  submit() {
+    this.submitExpenses.emit(this.categoryExpenses.categoryName);
   }
-
-  submitExpenses() {}
 }
