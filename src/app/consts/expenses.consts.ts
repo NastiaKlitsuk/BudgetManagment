@@ -1,35 +1,30 @@
-import { Expense } from '../interfaces/expenses.interfaces';
 import { CategoryExpenses } from '../interfaces/expenses.interfaces';
 import { CategoryExpensesName } from '../enums/expenses.enums';
-
-export const ExpensesTableEmptyData: Expense = {
-  date: '',
-  amount: null
-};
+import { emptyExpense } from '../utils/expenses.utils';
 
 export const emptyExpenses: CategoryExpenses[] = [
   {
     categoryName: CategoryExpensesName.Education,
-    expenses: [Object.assign({}, ExpensesTableEmptyData)]
+    expenses: [emptyExpense()]
   },
   {
     categoryName: CategoryExpensesName.Food,
-    expenses: [Object.assign({}, ExpensesTableEmptyData)]
+    expenses: [emptyExpense()]
   },
   {
     categoryName: CategoryExpensesName.Housing,
-    expenses: [Object.assign({}, ExpensesTableEmptyData)]
+    expenses: [emptyExpense()]
   },
   {
     categoryName: CategoryExpensesName.Other,
-    expenses: [Object.assign({}, ExpensesTableEmptyData)]
+    expenses: [emptyExpense()]
   },
   {
     categoryName: CategoryExpensesName.Shopping,
-    expenses: [Object.assign({}, ExpensesTableEmptyData)]
+    expenses: [emptyExpense()]
   },
   {
     categoryName: CategoryExpensesName.Traveling,
-    expenses: [Object.assign({}, ExpensesTableEmptyData)]
+    expenses: [emptyExpense()]
   }
 ];

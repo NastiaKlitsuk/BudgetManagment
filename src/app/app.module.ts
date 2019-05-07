@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { StoreModule } from '@ngrx/store';
 import { allReducers } from './store';
@@ -16,6 +16,9 @@ import { ExpensesTableComponent } from './expenses-table/expenses-table.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExpensesBySubjectComponent } from './expenses-by-subject/expenses-by-subject.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
+import { ExpensesEffects } from './store/expenses/expenses.effects';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatTableModule,
     MatFormFieldModule,
     MatDatepickerModule,
@@ -35,7 +39,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     MatInputModule,
     MatButtonModule,
     StoreModule.forRoot(allReducers),
-    StoreDevtoolsModule.instrument({ maxAge: 25 })
+    EffectsModule.forRoot([ExpensesEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25 }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

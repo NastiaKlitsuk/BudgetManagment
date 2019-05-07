@@ -8,20 +8,21 @@ import { CategoryExpensesName } from '../enums/expenses.enums';
   styleUrls: ['./expenses-table.component.css']
 })
 export class ExpensesTableComponent {
-  public displayedColumns: string[] = ['date', 'amount'];
+  public displayedColumns: string[] = ['date', 'description', 'amount'];
   @Input() categoryExpenses: CategoryExpenses;
   @Output() addNewRow: EventEmitter<CategoryExpensesName> = new EventEmitter();
   @Output() submitExpenses: EventEmitter<
-    CategoryExpensesName
+  CategoryExpenses
   > = new EventEmitter();
 
-  constructor() {}
+  constructor() {
+  }
 
   onAddNewRow() {
     this.addNewRow.emit(this.categoryExpenses.categoryName);
   }
 
   submit() {
-    this.submitExpenses.emit(this.categoryExpenses.categoryName);
+    this.submitExpenses.emit(this.categoryExpenses);
   }
 }

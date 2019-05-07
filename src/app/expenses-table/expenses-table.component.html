@@ -1,22 +1,28 @@
 <div class="table-container">
   <div class="table-wrapper">
-    <mat-table #table [dataSource]="expenses">
+    <mat-table #table [dataSource]="categoryExpenses.expenses">
       <ng-container matColumnDef="date">
         <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
         <mat-cell *matCellDef="let expense">
-          <mat-form-field>
+          <input
+            type="date"
+            placeholder="Choose an expense date"
+            [value]="expense.date"
+            [(ngModel)]="expense.date"
+          />
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+        <mat-cell *matCellDef="let expense">
+          <mat-form-field floatLabel="never">
             <input
               matInput
-              [matDatepicker]="picker"
-              [value]="expense.date"
-              [(ngModel)]="expense.date"
-              placeholder="Choose an expense date"
+              type="text"
+              [value]="expense.description"
+              [(ngModel)]="expense.description"
             />
-            <mat-datepicker-toggle
-              matSuffix
-              [for]="picker"
-            ></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
         </mat-cell>
       </ng-container>
@@ -27,6 +33,7 @@
           <mat-form-field floatLabel="never">
             <input
               matInput
+              type="number"
               [value]="expense.amount"
               [(ngModel)]="expense.amount"
             />
@@ -34,7 +41,9 @@
         </mat-cell>
       </ng-container>
 
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-header-row
+        *matHeaderRowDef="displayedColumns; sticky: true"
+      ></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
     </mat-table>
   </div>

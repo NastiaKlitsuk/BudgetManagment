@@ -1,0 +1,63 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "expensesByCategory": [
+    {
+      "categoryName": "Education",
+      "expenses": [
+        { "date": "2019-05-01", "description": "description1", "amount": 100 },
+        { "date": "2019-05-02", "description": "description2", "amount": 200 }
+      ]
+    },
+    {
+      "categoryName": "Food",
+      "expenses": [
+        { "date": "2019-05-03", "description": "description3", "amount": 300 },
+        { "date": "2019-05-04", "description": "description4", "amount": 400 }
+      ]
+    },
+    {
+      "categoryName": "Housing",
+      "expenses": [
+        { "date": "2019-05-05", "description": "description5", "amount": 500 },
+        { "date": "2019-05-06", "description": "description6", "amount": 600 }
+      ]
+    },
+    {
+      "categoryName": "Other",
+      "expenses": [
+        { "date": "2019-05-07", "description": "description7", "amount": 700 },
+        { "date": "2019-05-08", "description": "description8", "amount": 800 }
+      ]
+    },
+    {
+      "categoryName": "Shopping",
+      "expenses": [
+        { "date": "2019-05-09", "description": "description9", "amount": 900 },
+        { "date": "2019-05-10", "description": "description10", "amount": 1000 }
+      ]
+    },
+    {
+      "categoryName": "Traveling",
+      "expenses": [
+        { "date": "2019-05-11", "description": "description11", "amount": 1100 },
+        { "date": "2019-05-12", "description": "description12", "amount": 1200 }
+      ]
+    }
+  ]
+}
