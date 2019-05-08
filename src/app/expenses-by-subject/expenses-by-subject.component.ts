@@ -27,11 +27,13 @@ export class ExpensesBySubjectComponent implements OnInit {
 
   onAddNewRow(categoryExpensesName: CategoryExpensesName) {
     console.log('onAddNewRow', { categoryExpensesName });
-    this.store.dispatch(new expensesActions.AddNewEmptyExpense(categoryExpensesName));
+    this.store.dispatch(
+      new expensesActions.AddNewEmptyExpense(categoryExpensesName)
+    );
   }
 
   onSubmitExpenses(categoryExpenses: CategoryExpenses) {
     console.log('onSubmitExpenses', { categoryExpenses });
-    this.store.dispatch(new expensesActions.PostExpenses(categoryExpenses));
+    this.store.dispatch(new expensesActions.SaveCategotyExpenses(categoryExpenses));
   }
 }

@@ -4,7 +4,8 @@ import { CategoryExpenses } from '../../interfaces/expenses.interfaces';
 
 export const LOAD_EXPENSES = '[Expenses] Load expenses';
 export const ADD_NEW_EMPTY_EXPENSE = '[Expenses] Add new empty expense';
-export const POST_EXPENSES = '[Expenses] Post expenses';
+export const SAVE_CATEGORY_EXPENSES = '[Expenses] Save category expenses';
+export const SAVE_EXPENSES_SUCCESS = '[Expenses] Save expenses success';
 export const LOAD_EXPENSES_SUCCESS = '[Expenses] Load expenses success';
 
 export class AddNewEmptyExpense implements Action {
@@ -12,8 +13,13 @@ export class AddNewEmptyExpense implements Action {
   constructor(public payload: CategoryExpensesName) {}
 }
 
-export class PostExpenses implements Action {
-  readonly type = POST_EXPENSES;
+export class SaveCategotyExpenses implements Action {
+  readonly type = SAVE_CATEGORY_EXPENSES;
+  constructor(public payload: CategoryExpenses) {}
+}
+
+export class SaveExpensesSuccess implements Action {
+  readonly type = SAVE_EXPENSES_SUCCESS;
   constructor(public payload: CategoryExpenses) {}
 }
 
@@ -27,4 +33,9 @@ export class LoadExpensesSuccess implements Action {
   constructor(public payload: CategoryExpenses[]) {}
 }
 
-export type ExpensesActions = AddNewEmptyExpense | PostExpenses | LoadExpenses | LoadExpensesSuccess;
+export type ExpensesActions =
+  | AddNewEmptyExpense
+  | SaveCategotyExpenses
+  | LoadExpenses
+  | LoadExpensesSuccess
+  | SaveExpensesSuccess;

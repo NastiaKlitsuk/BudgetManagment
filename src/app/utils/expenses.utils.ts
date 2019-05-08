@@ -4,7 +4,7 @@ import { CategoryExpensesName } from '../enums/expenses.enums';
 export const ExpensesTableEmptyData: Expense = {
   date: '',
   amount: null,
-  description: '',
+  description: ''
 };
 
 export function emptyExpense() {
@@ -28,6 +28,10 @@ export function replaceCategoryExpenses(
   const categoryExpensesToChangeIndex = expenses.findIndex(
     expense => expense.categoryName === newCategoryExpenses.categoryName
   );
+  if (categoryExpensesToChangeIndex === -1) {
+    throw Error('Can not replace categoryExpenses. Does not exist.');
+  }
+
   return [
     ...expenses.slice(0, categoryExpensesToChangeIndex),
     newCategoryExpenses,

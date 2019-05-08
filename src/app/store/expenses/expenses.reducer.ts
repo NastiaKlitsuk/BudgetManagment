@@ -33,13 +33,23 @@ export function expensesReducer(
       };
       return {
         ...state,
-        expenses: replaceCategoryExpenses(state.expenses, newCategoryExpenses)
+        expenses: replaceCategoryExpenses(
+          state.expenses,
+          newCategoryExpenses
+        )
       };
     case expensesActions.LOAD_EXPENSES_SUCCESS:
-      const expenses = action.payload;
       return {
         ...state,
-        expenses
+        expenses: action.payload
+      };
+    case expensesActions.SAVE_EXPENSES_SUCCESS:
+      return {
+        ...state,
+        expenses: replaceCategoryExpenses(
+          state.expenses,
+          action.payload
+        )
       };
   }
   return state;

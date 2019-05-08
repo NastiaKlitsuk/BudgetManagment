@@ -7,6 +7,7 @@ export interface Expense {
 }
 
 export interface CategoryExpenses {
+  id: number;
   categoryName: CategoryExpensesName;
   expenses: Expense[];
 }
