@@ -1,2 +1,19 @@
-<app-expenses-by-subject></app-expenses-by-subject>
-<router-outlet></router-outlet>
+<mat-toolbar class="toolbar-container">
+  <mat-icon class="icon" (click)="drawer.toggle()">subject</mat-icon>
+  <span>My Budget</span>
+</mat-toolbar>
+
+<mat-drawer-container class="app-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side" [opened]="true">
+    <mat-tab-group>
+      <mat-tab label="Budget"> Budget </mat-tab>
+      <mat-tab label="Summary"> Summary </mat-tab>
+    </mat-tab-group>
+  </mat-drawer>
+  <div class="sidenav-content">
+    <button type="button" mat-button>
+      Toggle sidenav
+      <router-outlet></router-outlet>
+    </button>
+  </div>
+</mat-drawer-container>

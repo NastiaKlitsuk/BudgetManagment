@@ -19,6 +19,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { ExpensesEffects } from './store/expenses/expenses.effects';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,10 @@ import { ExpensesEffects } from './store/expenses/expenses.effects';
     MatNativeDateModule,
     MatInputModule,
     MatButtonModule,
+    MatSidenavModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatIconModule,
     StoreModule.forRoot(allReducers),
     EffectsModule.forRoot([ExpensesEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25 }),

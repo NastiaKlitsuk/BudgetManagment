@@ -1,0 +1,33 @@
+.app-container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidenav {
+  padding: 20px;
+}
+
+.toolbar-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.black-bar {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+.icon {
+  padding: 0 14px;
+  cursor: pointer;
+}
