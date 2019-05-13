@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -14,8 +15,8 @@ import { ExpensesEffects } from './store/expenses/expenses.effects';
 import { expensesReducer } from './store/expenses/expenses.reducer';
 import { ExpensesTableComponent } from './expenses-table/expenses-table.component';
 import { ExpensesBySubjectComponent } from './expenses-by-subject/expenses-by-subject.component';
-import { CommonModule } from '@angular/common';
 import { ExpensesService } from './services/expenses/expenses.service';
+import { ExpensesResolver, EmptyExpensesResover } from './resolvers/expenses.resolver';
 
 @NgModule({
   declarations: [ExpensesTableComponent, ExpensesBySubjectComponent],
@@ -34,6 +35,6 @@ import { ExpensesService } from './services/expenses/expenses.service';
     EffectsModule.forFeature([ExpensesEffects]),
     HttpClientModule
   ],
-  providers: [ExpensesService],
+  providers: [ExpensesService, ExpensesResolver, EmptyExpensesResover]
 })
 export class BudgetModule {}

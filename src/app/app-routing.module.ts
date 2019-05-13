@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'budget/newMonth',
+    path: 'budget',
     loadChildren: './budget/budget.module#BudgetModule'
   }
 ];

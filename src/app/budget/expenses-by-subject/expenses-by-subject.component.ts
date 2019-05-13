@@ -16,13 +16,11 @@ import { CategoryExpensesName } from '../enums/expenses.enums';
 })
 export class ExpensesBySubjectComponent implements OnInit {
   public expensesByCategory$: Observable<CategoryExpenses[]>;
-  public expensesByCategory: CategoryExpenses[];
 
   constructor(private store: Store<ExpensesState>) {}
 
   ngOnInit() {
     this.expensesByCategory$ = this.store.select(getExpensesByCategories);
-    this.store.dispatch(new expensesActions.LoadExpenses());
   }
 
   onAddNewRow(categoryExpensesName: CategoryExpensesName) {

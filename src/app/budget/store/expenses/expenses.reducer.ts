@@ -33,10 +33,7 @@ export function expensesReducer(
       };
       return {
         ...state,
-        expenses: replaceCategoryExpenses(
-          state.expenses,
-          newCategoryExpenses
-        )
+        expenses: replaceCategoryExpenses(state.expenses, newCategoryExpenses)
       };
     case expensesActions.LOAD_EXPENSES_SUCCESS:
       return {
@@ -46,10 +43,12 @@ export function expensesReducer(
     case expensesActions.SAVE_EXPENSES_SUCCESS:
       return {
         ...state,
-        expenses: replaceCategoryExpenses(
-          state.expenses,
-          action.payload
-        )
+        expenses: replaceCategoryExpenses(state.expenses, action.payload)
+      };
+    case expensesActions.CLEAR_EXPENSES:
+      return {
+        ...state,
+        expenses: emptyExpenses
       };
   }
   return state;
@@ -57,9 +56,7 @@ export function expensesReducer(
 
 export const getExpenses = (state: ExpensesState) => state.expenses;
 
-export const expensesState = createFeatureSelector<ExpensesState>(
-  'expenses'
-);
+export const expensesState = createFeatureSelector<ExpensesState>('expenses');
 export const getExpensesByCategories = createSelector(
   expensesState,
   getExpenses
