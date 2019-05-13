@@ -6,7 +6,6 @@
 
 .sidenav-content {
   display: flex;
-  height: 95%;
   align-items: center;
   justify-content: center;
 }
@@ -22,3 +21,9 @@
   margin: 6px 0;
 }
 
+.budget-menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  margin: 10px;
+}

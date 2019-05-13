@@ -58,7 +58,7 @@ export function expensesReducer(
 export const getExpenses = (state: ExpensesState) => state.expenses;
 
 export const expensesState = createFeatureSelector<ExpensesState>(
-  'expensesByCategories'
+  'expenses'
 );
 export const getExpensesByCategories = createSelector(
   expensesState,

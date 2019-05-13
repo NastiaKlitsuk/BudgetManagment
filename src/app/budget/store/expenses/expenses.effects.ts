@@ -1,9 +1,9 @@
+import { of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { ExpensesService } from '../../services/expenses/expenses.service';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { switchMap, map, catchError } from 'rxjs/operators';
-import * as expensesActions from '../../store/expenses/expenses.actions';
-import { of } from 'rxjs';
+import * as expensesActions from './expenses.actions';
 import { CategoryExpenses } from '../../interfaces/expenses.interfaces';
 
 @Injectable()
