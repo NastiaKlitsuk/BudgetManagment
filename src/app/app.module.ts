@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { StoreModule } from '@ngrx/store';
-import { allReducers } from './store';
+import { appReducers } from './store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatTableModule } from '@angular/material/table';
@@ -23,12 +23,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExpensesTableComponent,
-    ExpensesBySubjectComponent
+    ExpensesBySubjectComponent,
+    SidebarComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatTabsModule,
     MatToolbarModule,
     MatIconModule,
-    StoreModule.forRoot(allReducers),
+    StoreModule.forRoot(appReducers),
     EffectsModule.forRoot([ExpensesEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25 }),
     HttpClientModule

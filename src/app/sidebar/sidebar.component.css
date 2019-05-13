@@ -15,12 +15,6 @@
   padding: 20px;
 }
 
-.toolbar-container {
-  display: flex;
-  flex-direction: row;
-  height: 5%;
-}
-
 .black-bar {
   width: 35px;
   height: 5px;
@@ -28,7 +22,3 @@
   margin: 6px 0;
 }
 
-.icon {
-  padding: 0 14px;
-  cursor: pointer;
-}

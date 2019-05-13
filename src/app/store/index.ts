@@ -1,5 +1,7 @@
 import { expensesReducer } from './expenses/expenses.reducer';
+import { sidebarReducer } from './sidebar/sidebar.reducer';
 
-export const allReducers = {
-  expensesByCategories: expensesReducer
+export const appReducers = {
+  expensesByCategories: expensesReducer,
+  sidebar: sidebarReducer
 };
