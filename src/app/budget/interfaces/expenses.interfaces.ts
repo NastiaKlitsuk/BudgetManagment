@@ -1,9 +1,11 @@
 import { CategoryExpensesName } from '../enums/expenses.enums';
 
 export interface Expense {
+  sub_category: string;
   date: string;
-  description: string;
-  amount: number;
+  comments: string;
+  planned_amount: number;
+  actual_amount: string;
 }
 
 export interface CategoryExpenses {

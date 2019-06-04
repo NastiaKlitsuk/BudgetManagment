@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {
   ExpensesResolver,
-  EmptyExpensesResover
+  PrototypeExpensesResolver
 } from './resolvers/expenses.resolver';
 import { ExpensesBySubjectComponent } from './expenses-by-subject/expenses-by-subject.component';
 
@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: 'newMonth',
     component: ExpensesBySubjectComponent,
-    resolve: { emptyExpensesResolver: EmptyExpensesResover }
+    resolve: { prototypeExpensesResolver: PrototypeExpensesResolver }
   },
   {
     path: 'updateMonth',

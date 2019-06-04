@@ -32,6 +32,6 @@ export class ExpensesBySubjectComponent implements OnInit {
 
   onSubmitExpenses(categoryExpenses: CategoryExpenses) {
     console.log('onSubmitExpenses', { categoryExpenses });
-    this.store.dispatch(new expensesActions.SaveCategotyExpenses(categoryExpenses));
+    this.store.dispatch(new expensesActions.SaveCategoryExpenses(categoryExpenses));
   }
 }

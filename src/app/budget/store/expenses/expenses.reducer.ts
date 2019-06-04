@@ -5,7 +5,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import {
   emptyExpense,
   getCategoryExpensesByCategoryName,
-  replaceCategoryExpenses
+  updateCategoryExpenses
 } from '../../utils/expenses.utils';
 
 export interface ExpensesState {
@@ -33,7 +33,7 @@ export function expensesReducer(
       };
       return {
         ...state,
-        expenses: replaceCategoryExpenses(state.expenses, newCategoryExpenses)
+        expenses: updateCategoryExpenses(state.expenses, newCategoryExpenses)
       };
     case expensesActions.LOAD_EXPENSES_SUCCESS:
       return {
@@ -43,12 +43,17 @@ export function expensesReducer(
     case expensesActions.SAVE_EXPENSES_SUCCESS:
       return {
         ...state,
-        expenses: replaceCategoryExpenses(state.expenses, action.payload)
+        expenses: updateCategoryExpenses(state.expenses, action.payload)
       };
     case expensesActions.CLEAR_EXPENSES:
       return {
         ...state,
         expenses: emptyExpenses
+      };
+    case expensesActions.LOAD_PROTOTYPE_EXPENSES_SUCCESS:
+      return {
+        ...state,
+        expenses: action.payload
       };
   }
   return state;

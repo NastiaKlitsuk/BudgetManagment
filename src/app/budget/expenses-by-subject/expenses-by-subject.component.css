@@ -1,14 +1,12 @@
 .expenses-container {
-  display: grid;
-  grid-template-columns: repeat(2, 35vw);
-  grid-gap: 5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .expenses-subject-container {
   display: flex;
   flex-direction: column;
   text-align: start;
-  width: 35vw;
   margin: 10px;
 }
 

@@ -14,3 +14,39 @@
   align-items: flex-start;
   margin-top: 10px;
 }
+
+input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+input:focus {
+  outline: none;
+}
+
+mat-table {
+  display: table;
+  width: 100%;
+}
+
+mat-header-row,
+mat-row {
+  display: table-row;
+  padding: 0;
+  border: none;
+}
+mat-header-cell,
+mat-cell {
+  display: table-cell;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.mat-form-field-infix .ng-invalid {
+  border-bottom: 1px solid red;
+}

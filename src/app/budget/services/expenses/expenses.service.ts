@@ -13,11 +13,22 @@ const expensesByCategoryUrl = (id?: number) =>
   id
     ? `http://localhost:3004/expensesByCategory/${id}`
     : 'http://localhost:3004/expensesByCategory';
+
+const prototypeExpensesByCategoryUrl = (id?: number) =>
+  id
+    ? `http://localhost:3004/prototypeExpensesByCategory/${id}`
+    : 'http://localhost:3004/prototypeExpensesByCategory';
 @Injectable({
   providedIn: 'root'
 })
 export class ExpensesService {
   constructor(private http: HttpClient) {}
+
+  getPrototypeExpenses() {
+    return this.http.get(prototypeExpensesByCategoryUrl()) as Observable<
+      CategoryExpenses[]
+    >;
+  }
 
   getExpenses() {
     return this.http.get(expensesByCategoryUrl()) as Observable<

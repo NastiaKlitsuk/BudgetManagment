@@ -16,11 +16,11 @@ export class ExpensesResolver implements Resolve<any> {
 }
 
 @Injectable()
-export class EmptyExpensesResover implements Resolve<any> {
+export class PrototypeExpensesResolver implements Resolve<any> {
   constructor(private store: Store<ExpensesState>) {}
 
   resolve() {
-    this.store.dispatch(new expensesActions.ClearExpenses());
+    this.store.dispatch(new expensesActions.LoadPrototypeExpenses());
     return of(EMPTY);
   }
 }

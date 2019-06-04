@@ -1,54 +1,74 @@
-<div class="table-container">
-  <div class="table-wrapper">
-    <mat-table #table [dataSource]="categoryExpenses.expenses">
-      <ng-container matColumnDef="date">
-        <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
-        <mat-cell *matCellDef="let expense">
+<form class="table-container" [formGroup]="expensesForm">
+  <mat-table
+    #table
+    [dataSource]="dataSource"
+    formArrayName="expensesRows"
+    class="table-wrapper"
+  >
+    <ng-container matColumnDef="subCategoryColumn">
+      <mat-header-cell *matHeaderCellDef>Sub-Category</mat-header-cell>
+      <mat-cell
+        *matCellDef="let expense; let index = index"
+        [formGroupName]="index"
+      >
+        <mat-form-field floatLabel="never">
+          <input matInput type="text" formControlName="sub_category" />
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="commentsColumn">
+      <mat-header-cell *matHeaderCellDef> Comments </mat-header-cell>
+      <mat-cell
+        *matCellDef="let expense; let index = index"
+        [formGroupName]="index"
+      >
+        <mat-form-field floatLabel="never">
+          <input matInput type="text" formControlName="comments" />
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="plannedAmountColumn">
+      <mat-header-cell *matHeaderCellDef> Planned Amount </mat-header-cell>
+      <mat-cell
+        *matCellDef="let expense; let index = index"
+        [formGroupName]="index"
+      >
+        <mat-form-field floatLabel="never">
+          <input matInput type="number" formControlName="planned_amount" />
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actualAmountColumn">
+      <mat-header-cell *matHeaderCellDef> Actual Amount </mat-header-cell>
+      <mat-cell
+        *matCellDef="let expense; let index = index"
+        [formGroupName]="index"
+      >
+        <mat-form-field floatLabel="never">
           <input
-            type="date"
-            placeholder="Choose an expense date"
-            [value]="expense.date"
-            [(ngModel)]="expense.date"
+            matInput
+            type="text"
+            placeholder="enter in the format of: 1+2+3"
+            (blur)="onBlur(expense)"
+            formControlName="actual_amount"
           />
-        </mat-cell>
-      </ng-container>
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
 
-      <ng-container matColumnDef="description">
-        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
-        <mat-cell *matCellDef="let expense">
-          <mat-form-field floatLabel="never">
-            <input
-              matInput
-              type="text"
-              [value]="expense.description"
-              [(ngModel)]="expense.description"
-            />
-          </mat-form-field>
-        </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="amount">
-        <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
-        <mat-cell *matCellDef="let expense">
-          <mat-form-field floatLabel="never">
-            <input
-              matInput
-              type="number"
-              [value]="expense.amount"
-              [(ngModel)]="expense.amount"
-            />
-          </mat-form-field>
-        </mat-cell>
-      </ng-container>
-
-      <mat-header-row
-        *matHeaderRowDef="displayedColumns; sticky: true"
-      ></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-    </mat-table>
-  </div>
+    <mat-header-row
+      *matHeaderRowDef="displayedColumns; sticky: true"
+    ></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
   <div class="buttons-container">
+    <div *ngIf="actualAmount && actualAmount.touched">
+      Name cannot match alter ego.
+    </div>
     <button mat-button (click)="onAddNewRow()">Add new row</button>
     <button mat-button color="primary" (click)="submit()">Submit</button>
   </div>
-</div>
+</form>

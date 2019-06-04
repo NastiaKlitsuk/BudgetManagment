@@ -5,7 +5,7 @@
   >
     <span class="subject">{{ categoryExpenses.categoryName }}</span>
     <app-expenses-table
-      [categoryExpenses]="categoryExpenses"
+      [expenses]="categoryExpenses.expenses"
       (addNewRow)="onAddNewRow($event)"
       (submitExpenses)="onSubmitExpenses($event)"
     ></app-expenses-table>

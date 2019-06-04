@@ -16,7 +16,7 @@ import { expensesReducer } from './store/expenses/expenses.reducer';
 import { ExpensesTableComponent } from './expenses-table/expenses-table.component';
 import { ExpensesBySubjectComponent } from './expenses-by-subject/expenses-by-subject.component';
 import { ExpensesService } from './services/expenses/expenses.service';
-import { ExpensesResolver, EmptyExpensesResover } from './resolvers/expenses.resolver';
+import { ExpensesResolver, PrototypeExpensesResolver } from './resolvers/expenses.resolver';
 
 @NgModule({
   declarations: [ExpensesTableComponent, ExpensesBySubjectComponent],
@@ -35,6 +35,6 @@ import { ExpensesResolver, EmptyExpensesResover } from './resolvers/expenses.res
     EffectsModule.forFeature([ExpensesEffects]),
     HttpClientModule
   ],
-  providers: [ExpensesService, ExpensesResolver, EmptyExpensesResover]
+  providers: [ExpensesService, ExpensesResolver, PrototypeExpensesResolver]
 })
 export class BudgetModule {}

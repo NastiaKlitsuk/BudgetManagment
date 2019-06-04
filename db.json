@@ -5,51 +5,79 @@
       "categoryName": "Education",
       "expenses": [
         {
-          "date": "2019-05-01",
-          "description": "description1",
-          "amount": 100
+          "sub_category": "Kindergarten",
+          "date": null,
+          "comments": "",
+          "planned_amount": 100,
+          "actual_amount": null
         },
         {
-          "date": "2019-05-02",
-          "description": "description2",
-          "amount": 200
+          "sub_category": "School and study meterials",
+          "date": null,
+          "comments": "",
+          "planned_amount": 234,
+          "actual_amount": null
         },
         {
-          "date": "2019-05-08",
-          "amount": 1200,
-          "description": "test1"
+          "sub_category": "Kids classes",
+          "date": null,
+          "comments": "",
+          "planned_amount": 870,
+          "actual_amount": null
         }
       ]
     },
     {
       "id": 2,
-      "categoryName": "Food",
+      "categoryName": "Shopping",
       "expenses": [
         {
-          "date": "2019-05-03",
-          "description": "description3",
-          "amount": 300
+          "sub_category": "Supermarket",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
         },
         {
-          "date": "2019-05-11",
-          "description": "description4",
-          "amount": 400
+          "sub_category": "Baby stuff",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        },
+        {
+          "sub_category": "Super-pharm",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        },
+        {
+          "sub_category": "Clothing and footwear",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
         }
       ]
     },
     {
       "id": 3,
-      "categoryName": "Housing",
+      "categoryName": "Medical",
       "expenses": [
         {
-          "date": "2019-05-05",
-          "description": "description5",
-          "amount": 500
+          "sub_category": "Medicines",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
         },
         {
-          "date": "2019-05-06",
-          "description": "description6",
-          "amount": 600
+          "sub_category": "Dental care",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
         }
       ]
     },
@@ -58,70 +86,217 @@
       "categoryName": "Other",
       "expenses": [
         {
-          "date": "2019-05-07",
-          "description": "description7",
-          "amount": 700
+          "sub_category": "Household products and maintenance",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
         },
         {
-          "date": "2019-05-08",
-          "description": "description8",
-          "amount": 800
+          "sub_category": "Unexpected expenses",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
         }
       ]
     },
     {
       "id": 5,
-      "categoryName": "Shopping",
+      "categoryName": "Care & Beauty",
       "expenses": [
         {
-          "date": "2019-05-09",
-          "description": "description9",
-          "amount": 900
+          "sub_category": "Beauty treatments",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
         },
         {
-          "date": "2019-05-10",
-          "description": "description10",
-          "amount": 1000
+          "sub_category": "Beauty cosmetics",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
         }
       ]
     },
     {
       "id": 6,
-      "categoryName": "Traveling",
+      "categoryName": "Transportation",
       "expenses": [
         {
-          "date": "2019-05-11",
-          "description": "description11",
-          "amount": 1100
+          "sub_category": "Comprehensive and compulsory vehicle insurance",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
         },
         {
-          "date": "2019-05-12",
-          "description": "description12",
-          "amount": 1200
+          "sub_category": " Treatments and licensing",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        },
+        {
+          "sub_category": "Public Transport",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        }
+      ]
+    }
+  ],
+  "prototypeExpensesByCategory": [
+    {
+      "id": 1,
+      "categoryName": "Education",
+      "expenses": [
+        {
+          "sub_category": "Kindergarten",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        },
+        {
+          "sub_category": "School and study meterials",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        },
+        {
+          "sub_category": "Kids classes",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
         }
       ]
     },
     {
-      "categoryName": "Lotto",
+      "id": 2,
+      "categoryName": "Shopping",
       "expenses": [
         {
-          "date": "2019-05-09",
-          "description": "description9",
-          "amount": 900
+          "sub_category": "Supermarket",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        },
+        {
+          "sub_category": "Baby stuff",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        },
+        {
+          "sub_category": "Super-pharm",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        },
+        {
+          "sub_category": "Clothing and footwear",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
         }
-      ],
-      "id": 7
+      ]
     },
     {
-      "categoryName": "Test",
+      "id": 3,
+      "categoryName": "Medical",
       "expenses": [
         {
-          "date": "2019-05-09",
-          "description": "description9",
-          "amount": 900
+          "sub_category": "Medicines",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        },
+        {
+          "sub_category": "Dental care",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
         }
-      ],
-      "id": 8
+      ]
+    },
+    {
+      "id": 4,
+      "categoryName": "Other",
+      "expenses": [
+        {
+          "sub_category": "Household products and maintenance",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        },
+        {
+          "sub_category": "Unexpected expenses",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "categoryName": "Care & Beauty",
+      "expenses": [
+        {
+          "sub_category": "Beauty treatments",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        },
+        {
+          "sub_category": "Beauty cosmetics",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "categoryName": "Transportation",
+      "expenses": [
+        {
+          "sub_category": "Comprehensive and compulsory vehicle insurance",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        },
+        {
+          "sub_category": " Treatments and licensing",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        },
+        {
+          "sub_category": "Public Transport",
+          "date": null,
+          "comments": "",
+          "planned_amount": null,
+          "actual_amount": null
+        }
+      ]
     }
   ]
 }

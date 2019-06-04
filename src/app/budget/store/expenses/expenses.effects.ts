@@ -26,9 +26,19 @@ export class ExpensesEffects {
   );
 
   @Effect()
+  loadPrototypeExpenses$ = this.actions$.pipe(
+    ofType(expensesActions.LOAD_PROTOTYPE_EXPENSES),
+    switchMap(() => {
+      return this.expensesService.getPrototypeExpenses().pipe(
+        map(prototypeExpenses => new expensesActions.LoadPrototypeExpensesSuccess(prototypeExpenses))
+      );
+    })
+  );
+
+  @Effect()
   saveExpenses$ = this.actions$.pipe(
     ofType(expensesActions.SAVE_CATEGORY_EXPENSES),
-    switchMap((action: expensesActions.SaveCategotyExpenses) => {
+    switchMap((action: expensesActions.SaveCategoryExpenses) => {
       return this.expensesService.putCategoryExpenses(action.payload).pipe(
         map((categoryExpenses: CategoryExpenses) => new expensesActions.SaveExpensesSuccess(categoryExpenses)),
         catchError(error => {

@@ -8,17 +8,30 @@ export const ADD_NEW_EMPTY_EXPENSE = '[Expenses] Add new empty expense';
 export const SAVE_CATEGORY_EXPENSES = '[Expenses] Save category expenses';
 export const SAVE_EXPENSES_SUCCESS = '[Expenses] Save expenses success';
 export const LOAD_EXPENSES_SUCCESS = '[Expenses] Load expenses success';
+export const LOAD_PROTOTYPE_EXPENSES = '[Expenses] Load prototype expenses';
+export const LOAD_PROTOTYPE_EXPENSES_SUCCESS =
+  '[Expenses] Load prototype expenses success';
 
 export class ClearExpenses implements Action {
   readonly type = CLEAR_EXPENSES;
   constructor() {}
+}
+
+export class LoadPrototypeExpenses implements Action {
+  readonly type = LOAD_PROTOTYPE_EXPENSES;
+  constructor() {}
+}
+
+export class LoadPrototypeExpensesSuccess implements Action {
+  readonly type = LOAD_PROTOTYPE_EXPENSES_SUCCESS;
+  constructor(public payload: CategoryExpenses[]) {}
 }
 export class AddNewEmptyExpense implements Action {
   readonly type = ADD_NEW_EMPTY_EXPENSE;
   constructor(public payload: CategoryExpensesName) {}
 }
 
-export class SaveCategotyExpenses implements Action {
+export class SaveCategoryExpenses implements Action {
   readonly type = SAVE_CATEGORY_EXPENSES;
   constructor(public payload: CategoryExpenses) {}
 }
@@ -41,7 +54,9 @@ export class LoadExpensesSuccess implements Action {
 export type ExpensesActions =
   | ClearExpenses
   | AddNewEmptyExpense
-  | SaveCategotyExpenses
+  | SaveCategoryExpenses
   | LoadExpenses
   | LoadExpensesSuccess
-  | SaveExpensesSuccess;
+  | SaveExpensesSuccess
+  | LoadPrototypeExpenses
+  | LoadPrototypeExpensesSuccess;
